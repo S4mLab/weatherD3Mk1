@@ -1,0 +1,22 @@
+{
+  "name": "weathermk1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chart.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "clean": "rm -rf dist/*"
+  },
+  "keywords": [
+    "d3"
+  ],
+  "author": "sam",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.4.1"
+  },
+  "dependencies": {
+    "d3": "^7.4.1"
+  }
+}
