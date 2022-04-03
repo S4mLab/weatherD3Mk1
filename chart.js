@@ -94,6 +94,17 @@ async function drawLineGraph() {
     .attr('fill', 'none')
     .attr('stroke', '#af9358')
     .attr('stroke-width', 2);
+
+  const yAxisGenerator = d3.axisLeft().scale(yScale);
+  const xAxisGenerator = d3.axisBottom().scale(xScale);
+
+  // generate the y axis
+  const yAxis = graph.append('g').call(yAxisGenerator);
+  // generate the x axis
+  const xAxis = graph
+    .append('g')
+    .call(xAxisGenerator)
+    .style('transform', `translateY(${graphDimension.height}px)`);
 }
 
 drawLineGraph();
