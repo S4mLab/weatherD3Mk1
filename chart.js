@@ -81,6 +81,19 @@ async function drawLineGraph() {
     .attr('y', freezingTempScale)
     .attr('height', graphDimension.height - freezingTempScale)
     .attr('fill', '#e0f3f3');
+
+  // extract x,y value for d attr of path svg element
+  const lineGenerator = d3
+    .line()
+    .x((dataObj) => xScale(xAccessor(dataObj)))
+    .y((dataObj) => yScale(yAccessor(dataObj)));
+
+  const drawLine = graph
+    .append('path')
+    .attr('d', lineGenerator(weatherObjsList))
+    .attr('fill', 'none')
+    .attr('stroke', '#af9358')
+    .attr('stroke-width', 2);
 }
 
 drawLineGraph();
